@@ -13,8 +13,8 @@
 
 
 /* Searchbar transparency */
-[data-has-hero], [data-has-sidebar] button[data-open-modal] { 
-    background-color: #ffffff21;
+[data-has-hero] button, [data-has-sidebar] button [data-open-modal] { 
+    background-color: #ffffff36;
     box-shadow: none;
 }
 
@@ -49,16 +49,32 @@ nav {
     background-color: #ffffff21;
     border: none;
 }
-/* REMOVING BORDERS IN DOC PAGES */
-[data-has-sidebar] .sidebar-pane, .right-sidebar, summary {
-    border-inline: none;
+/* REMOVING BORDERS IN DOC PAGES AND CHANGING BACKGROUND OF DAY MENU ON MOBILE */
+[data-has-sidebar] .sidebar-pane.sidebar-pane.sidebar-pane, .right-sidebar.right-sidebar.right-sidebar, .content-panel.content-panel.content-panel, summary {  
+    /* Triple sidebarpain to increase specificity */
+    border-inline-start: none;
+    border-inline-end: none;
     border-bottom: none;
+    border-top: none;
 }
 
+[data-has-sidebar][data-theme='dark'] .sidebar-pane {
+    background-color: rgba(6, 6, 7, 0.158);
+    backdrop-filter: blur(30px);
+}
+
+[data-has-sidebar][data-theme='light'] .sidebar-pane {
+    background-color: rgba(168, 168, 175, 0.089);
+    backdrop-filter: blur(20px);
+}
 /* --- GRADIENT BACKGROUNDS --- */
 
 [data-has-hero][data-theme='dark'] .page {
-    background: radial-gradient(circle farthest-side at 100% 0%, transparent -30% ,rgba(255, 227, 70, 0.342) 60%,rgba(17, 83, 134, 0.555) 100%);  
+    /* background: radial-gradient(circle farthest-side at 100% 0%, transparent -30% ,rgba(255, 227, 70, 0.342) 60%,rgba(17, 83, 134, 0.555) 100%);   */
+    /* background: radial-gradient(circle at 100% 0%, #3e7fb044 20%, #f0e5b21f 50%, rgb(22, 32, 41) 70%); */
+    /* background: radial-gradient(circle at 50% 50%, #3e7fb044 10%, #f0e5b21f 30%, rgb(22, 32, 41) 40%, transparent 50%) no-repeat -50vw -5vw; */
+    background: radial-gradient(circle farthest-corner at 50% 50%, #e4c63e4b 0%, transparent 40%) no-repeat -12vw -30vh,
+    radial-gradient(circle farthest-corner at 50% 50%, #60b5e65d 0%, transparent 40%) no-repeat 12vw -30vh;
 }
 
 /* Light theme landing page*/
