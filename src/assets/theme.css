@@ -1,0 +1,102 @@
+/* SITE WIDE THEME DO NOT EDIT */
+:root[data-theme='dark'] { 
+    --sl-color-accent-high: #75ecd3; /* accent colour for dark mode */
+    --sl-color-bg-sidebar: transparent;
+    --sl-color-bg-nav: transparent;
+    --sl-color-hairline: rgba(173, 212, 204, 0.255)
+}
+:root[data-theme='light'] {
+    --sl-color-text-accent: #2c9780; /* accent colour for light mode */
+    --sl-color-bg-sidebar: transparent;
+    --sl-color-bg-nav: transparent;
+}
+
+
+/* Searchbar transparency */
+[data-has-hero] button, [data-has-sidebar] button [data-open-modal] { 
+    background-color: #ffffff36;
+    box-shadow: none;
+}
+
+
+/* Topbar transparency */
+[data-has-hero] header, [data-has-sidebar] header{
+    background-color: transparent;
+    backdrop-filter: blur(3px) brightness(0.98);
+    border-bottom: none;
+}
+
+/* Removes border of the "On this page" sidebar collapsible on mobile */
+nav {
+    border-top: none;
+}
+
+
+/* Changes the colour of the "On this page" button on mobile */
+[data-theme='light'] .toggle {
+    backdrop-filter: blur(3px);
+    background-color: rgba(255, 255, 255, 0.473);
+}
+
+[data-theme='dark'] .toggle {
+    backdrop-filter: blur(3px);
+    background-color: transparent;
+}
+
+
+/* CARDS TRANSPARENCY */
+[data-has-hero] .card {
+    background-color: #ffffff21;
+    border: none;
+}
+/* REMOVING BORDERS IN DOC PAGES AND CHANGING BACKGROUND OF DAY MENU ON MOBILE */
+[data-has-sidebar] .sidebar-pane.sidebar-pane.sidebar-pane, .right-sidebar.right-sidebar.right-sidebar, .content-panel.content-panel.content-panel, summary {  
+    /* Triple sidebarpain to increase specificity */
+    border-inline-start: none;
+    border-inline-end: none;
+    border-bottom: none;
+    border-top: none;
+}
+
+[data-has-sidebar][data-theme='dark'] .sidebar-pane {
+    background-color: rgba(6, 6, 7, 0.158);
+    backdrop-filter: blur(30px);
+}
+
+[data-has-sidebar][data-theme='light'] .sidebar-pane {
+    background-color: rgba(168, 168, 175, 0.089);
+    backdrop-filter: blur(20px);
+}
+/* --- GRADIENT BACKGROUNDS --- */
+
+[data-has-hero][data-theme='dark'] .page {
+    /* background: radial-gradient(circle farthest-side at 100% 0%, transparent -30% ,rgba(255, 227, 70, 0.342) 60%,rgba(17, 83, 134, 0.555) 100%);   */
+    /* background: radial-gradient(circle at 100% 0%, #3e7fb044 20%, #f0e5b21f 50%, rgb(22, 32, 41) 70%); */
+    /* background: radial-gradient(circle at 50% 50%, #3e7fb044 10%, #f0e5b21f 30%, rgb(22, 32, 41) 40%, transparent 50%) no-repeat -50vw -5vw; */
+    background: radial-gradient(circle farthest-corner at 50% 50%, #e4c63e4b 0%, transparent 40%) no-repeat -12vw -30vh,
+    radial-gradient(circle farthest-corner at 50% 50%, #60b5e65d 0%, transparent 40%) no-repeat 12vw -30vh;
+}
+
+/* Light theme landing page*/
+[data-has-hero][data-theme='light'] .page{
+    /* background: linear-gradient(45deg, rgba(213, 250, 206, 0.527) 25%, #9a3af425 70%, #e9aaf793 90%); */
+    /* background: linear-gradient(45deg, rgba(213, 250, 206, 0.527) 10%, #b183db8a 60%, #efb8fcb0 90%); */
+    /* background: linear-gradient(45deg, rgba(204, 248, 195, 0.527) 10%, #dbb8fc9f 75%, #d865f13d 90%); */
+    background: radial-gradient(circle farthest-side at 0% 100%, #ed485b4d 0%, #a94ec071 15%, #8052ff65 30%, transparent 100%),
+    radial-gradient(circle farthest-side at 0% 0%, #ed485b28 0%, #a94ec02f 15%, #8052ff2c 40%, transparent 70%);
+}   
+
+/* Dark theme code pages */
+[data-has-sidebar][data-theme='dark'] .page {
+    background: radial-gradient(circle farthest-side at 100% 0%, transparent -30% ,rgba(255, 227, 70, 0.342) 5%,rgba(17, 83, 134, 0.555) 40%);
+}
+
+
+/* Light theme code pages */
+[data-has-sidebar][data-theme='light'] .page {
+    /* background: linear-gradient(45deg, rgba(213, 250, 206, 0.527) 25%, #9a3af425 70%, #e9aaf793 90%); */
+    /* background: linear-gradient(45deg, rgba(213, 250, 206, 0.527) 10%, #b183db8a 60%, #efb8fcb0 90%); */
+    /* background: linear-gradient(45deg, rgba(204, 248, 195, 0.527) 10%, #dbb8fc9f 75%, #d865f13d 90%); */
+    background: radial-gradient(circle farthest-side at 0% 100%, #ed485b4d 0%, #a94ec071 15%, #8052ff65 30%, transparent 100%),
+    radial-gradient(circle farthest-side at 0% 0%, #ed485b28 0%, #a94ec02f 15%, #8052ff2c 40%, transparent 70%);
+} 
